@@ -884,12 +884,15 @@ h4 {
     box-shadow: 0 12px 40px rgba(0, 51, 102, 0.15);
 }
 
+/* Base leader photo style */
 .leader-photo {
     position: relative;
     width: 100%;
-    height: 350px;
+    height: 450px;
+    /* Unified height for perfect balance */
     overflow: hidden;
-    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+    background: #f0f4f8;
+    /* Default background */
 }
 
 .leader-photo img {
@@ -900,38 +903,48 @@ h4 {
     transition: transform 0.5s ease;
 }
 
+/* Specific styling for Francesc Agell - Logo on Wall */
+.leader-agell .leader-photo {
+    background-color: #f1f5f9;
+    /* Single solid color */
+    background-image: url('assets/images/bps_new_logo.png');
+    /* Logo on "wall" */
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    /* Positioned behind head/torso */
+    background-size: 180px;
+    /* Adjust size as needed */
+}
+
+.leader-agell .leader-photo img {
+    margin-top: 20px;
+    /* Minor adjustment if needed to clear logo slightly */
+}
+
 /* Specific styling for Dr. Sauri */
 .leader-sauri .leader-photo {
-    height: 480px;
-    /* Taller for full impact */
+    /* Height inherits from base (450px) for equality */
+    background-color: #fff;
+    /* Clean lab background */
 }
 
 .leader-sauri .leader-photo img {
     object-fit: cover;
     /* Fill the frame */
-    object-position: center 15%;
-    /* Centered horizontally, crop top slightly */
+    /* Center horizontally, Top vertically (crucial for cropping bottom) */
+    object-position: center top;
+
     image-rendering: -webkit-optimize-contrast;
     filter: contrast(1.05) brightness(1.02);
 }
 
 .leader-card:hover .leader-photo img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .photo-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 51, 102, 0.2) 0%, rgba(0, 113, 188, 0.25) 100%);
-    pointer-events: none;
-}
-
-.leader-sauri .photo-overlay {
+    /* Generally remove overlays for cleaner look */
     display: none;
-    /* No overlay for Dr. Sauri */
 }
 
 .leader-content {
