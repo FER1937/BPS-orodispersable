@@ -903,22 +903,32 @@ h4 {
     transition: transform 0.5s ease;
 }
 
-/* Specific styling for Francesc Agell - Logo on Wall */
+/* Specific styling for Francesc Agell - Modern Minimalist Office Simulation */
 .leader-agell .leader-photo {
-    background-color: #f1f5f9;
-    /* Single solid color */
-    background-image: url('assets/images/bps_new_logo.png');
-    /* Logo on "wall" */
-    background-repeat: no-repeat;
-    background-position: center 30%;
-    /* Positioned behind head/torso */
-    background-size: 180px;
-    /* Adjust size as needed */
+    /* Base: Soft white wall */
+    background-color: #f8fafc;
+
+    /* Layered Gradients to simulate blurred office environment:
+       1. Logo (subtle, on wall)
+       2. Soft light coming from top left (window simulation)
+       3. Depth shadow from bottom/sides
+    */
+    background-image:
+        url('assets/images/bps_new_logo.png'),
+        radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.9) 0%, rgba(241, 245, 249, 0.4) 60%),
+        linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: center 30%, center, center;
+    background-size: 160px, cover, cover;
+    background-blend-mode: multiply, normal, normal;
+    /* Blend safely */
 }
 
 .leader-agell .leader-photo img {
     margin-top: 20px;
-    /* Minor adjustment if needed to clear logo slightly */
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+    /* Add depth to subject vs background */
 }
 
 /* Specific styling for Dr. Sauri */
