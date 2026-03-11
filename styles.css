@@ -1248,13 +1248,10 @@ h4 {
 
 .footer-bottom {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 2.5rem;
     padding-top: 3rem;
     border-top: 1px solid #E2E8F0;
-    text-align: center;
 }
 
 /* In-Browser Editor Styles */
@@ -2972,30 +2969,24 @@ html.instant-scroll {
     display: block;
     object-fit: contain;
 }
-
-/* ==========================================
-   FOOTER LOGOS — ISOLATED FROM HEADER CSS
-   ========================================== */
+/* ==============================================
+   ACCIO FOOTER LOGO — isolated styles
+   ============================================== */
 
 .footer-logos {
     display: flex;
     align-items: center;
-    gap: 4rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 0;
+    gap: 3rem;
 }
 
-/* BPS logo — no inheritance from nav/header */
 .footer-bps-logo {
     display: flex;
     align-items: center;
     overflow: visible;
-    flex-shrink: 0;
 }
 
 .footer-bps-img {
-    height: 104px;         /* 86px * 1.2 ~= 104px */
+    height: 104px;
     width: auto;
     display: block;
     object-fit: contain;
@@ -3008,66 +2999,49 @@ html.instant-scroll {
     opacity: 0.8;
 }
 
-/* Acció support block */
 .accio-support {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    padding-left: 4rem;
-    border-left: 1px solid rgba(0, 51, 102, 0.12);
-    flex-shrink: 0;
-    overflow: visible;
+    gap: 1.25rem;
+    padding-left: 3rem;
+    border-left: 1px solid rgba(0, 51, 102, 0.15);
 }
 
 .support-text {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     white-space: nowrap;
 }
 
 .accio-logo-link {
     display: flex;
     align-items: center;
-    flex-shrink: 0;
-    overflow: visible;
 }
 
 .accio-logo {
     height: 70px;
     width: auto;
     max-width: none;
-    max-height: none;
     display: block;
     object-fit: contain;
-    overflow: visible;
-    flex-shrink: 0;
-    transition: var(--transition-smooth);
-    filter: none;          /* Full color — compliance logo */
+    transition: opacity 0.3s ease;
 }
 
 .accio-logo-link:hover .accio-logo {
-    filter: grayscale(0%) opacity(1);
-    transform: scale(1.05);
+    opacity: 0.8;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-    .footer-bottom {
-        gap: 2rem;
-    }
     .footer-logos {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
+        align-items: flex-start;
     }
     .accio-support {
         padding-left: 0;
         border-left: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
     }
 }
-
