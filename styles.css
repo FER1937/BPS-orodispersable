@@ -1120,7 +1120,8 @@ h4 {
     backdrop-filter: blur(5px);
 }
 
-.epo-center-badge {
+.epo-center-badge,
+.uspto-center-badge {
     height: 50px;
     width: auto;
     object-fit: contain;
@@ -1385,7 +1386,8 @@ h4 {
     border: 1px solid #E2E8F0;
 }
 
-.epo-center-badge {
+.epo-center-badge,
+.uspto-center-badge {
     height: 50px;
     width: auto;
     object-fit: contain;
