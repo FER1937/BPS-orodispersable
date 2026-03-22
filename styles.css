@@ -2318,7 +2318,8 @@ h4 {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
-.epo-badge {
+.epo-badge,
+.uspto-badge {
     height: 22px;
     /* Smaller as requested */
     width: auto;
@@ -2327,7 +2328,8 @@ h4 {
     transition: var(--transition-smooth);
 }
 
-.trust-badge-footer:hover .epo-badge {
+.trust-badge-footer:hover .epo-badge,
+.trust-badge-footer:hover .uspto-badge {
     filter: grayscale(0);
     opacity: 1;
 }
