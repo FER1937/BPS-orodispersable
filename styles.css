@@ -1120,9 +1120,14 @@ h4 {
     backdrop-filter: blur(5px);
 }
 
-.epo-center-badge,
-.uspto-center-badge {
+.epo-center-badge {
     height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.uspto-center-badge {
+    height: 65px;
     width: auto;
     object-fit: contain;
 }
@@ -1386,9 +1391,14 @@ h4 {
     border: 1px solid #E2E8F0;
 }
 
-.epo-center-badge,
-.uspto-center-badge {
+.epo-center-badge {
     height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.uspto-center-badge {
+    height: 65px;
     width: auto;
     object-fit: contain;
 }
@@ -2320,10 +2330,17 @@ h4 {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
-.epo-badge,
-.uspto-badge {
+.epo-badge {
     height: 22px;
     /* Smaller as requested */
+    width: auto;
+    filter: grayscale(1);
+    opacity: 0.7;
+    transition: var(--transition-smooth);
+}
+
+.uspto-badge {
+    height: 30px;
     width: auto;
     filter: grayscale(1);
     opacity: 0.7;
