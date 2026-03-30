@@ -858,8 +858,383 @@ h4 {
     padding: 0 2rem 2rem 2rem;
 }
 
+/* ============================================
+   Comparative Cost Analysis Table
+   ============================================ */
+.cost-table-wrapper {
+    margin-top: 5rem;
+    padding: 3rem;
+    background: var(--white);
+    border-radius: 24px;
+    border: 1px solid rgba(0, 51, 102, 0.07);
+    box-shadow: 0 4px 30px rgba(0, 51, 102, 0.06);
+}
+
+.cost-table-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+/* Split header: text left, stat right */
+.cost-table-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 51, 102, 0.06);
+}
+
+.cost-table-header-text {
+    text-align: left;
+    max-width: 650px; /* Allow text to breathe without pushing the stat away */
+}
+
+/* Title inherits .section-title sizing; override only spacing */
+.cost-table-title {
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.cost-table-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-top: 0.75rem;
+    max-width: 100%;
+}
+
+.cost-table-subtitle strong {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* Right-side stat callout */
+.cost-stat-callout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 1.5rem 2rem;
+    border-left: 1px solid rgba(0, 51, 102, 0.1);
+    text-align: center;
+    min-width: 160px;
+}
+
+.cost-stat-number {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.04em;
+    
+    /* Elegant dynamic entrance from the right */
+    opacity: 0;
+    animation: statRevealRight 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes statRevealRight {
+    0% {
+        opacity: 0;
+        transform: translateX(80px) scale(2);
+        filter: blur(8px);
+    }
+    40% {
+        opacity: 0.7;
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.cost-stat-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.4rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .cost-table-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    .cost-stat-callout {
+        align-self: flex-start;
+        border-left: none;
+        border-top: 1px solid rgba(0, 51, 102, 0.1);
+        padding: 1rem 0 0 0;
+        width: 100%;
+    }
+    .cost-stat-number {
+        font-size: 3rem;
+    }
+}
+
+/* Hero saving figure in subtitle */
+.cost-hero-saving {
+    display: inline-block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+/* BPS brand name in corporate blue */
+.bps-brand {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.cost-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 51, 102, 0.08);
+}
+
+.cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 640px;
+}
+
+.cost-table thead tr {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+}
+
+.cost-table thead th {
+    padding: 1.1rem 1.35rem;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.95);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.cost-table thead th:first-child {
+    border-radius: 16px 0 0 0;
+}
+
+.cost-table thead th:last-child {
+    border-radius: 0 16px 0 0;
+}
+
+/* OpEx / CapEx visible chip inside header */
+.th-tag {
+    display: inline-block;
+    margin-left: 0.4rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.22);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.cost-table tbody tr {
+    border-bottom: 1px solid rgba(0, 51, 102, 0.05);
+    transition: background 0.2s ease;
+}
+
+.cost-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.cost-table tbody tr:hover {
+    background: rgba(0, 51, 102, 0.02);
+}
+
+.cost-table tbody td {
+    padding: 1rem 1.25rem;
+    color: var(--text-main);
+    vertical-align: middle;
+}
+
+/* Highlighted BPS row — slightly larger, no excess */
+.cost-table-row--highlight {
+    background: linear-gradient(90deg, rgba(0, 145, 255, 0.05) 0%, rgba(255,255,255,0) 100%) !important;
+    border-left: 4px solid var(--accent) !important;
+}
+
+.cost-table-row--highlight td {
+    font-weight: 600;
+    font-size: 0.97rem;
+    padding: 1.4rem 1.35rem;
+}
+
+.technique-name {
+    display: block;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 0.2rem;
+}
+
+.technique-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    background: rgba(0, 145, 255, 0.1);
+    padding: 0.15rem 0.5rem;
+    border-radius: 50px;
+}
+
+/* Cost pills */
+.cost-pill {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.cost-pill--low {
+    background: rgba(16, 185, 129, 0.1);
+    color: #065f46;
+}
+
+.cost-pill--moderate {
+    background: rgba(245, 158, 11, 0.1);
+    color: #92400e;
+}
+
+.cost-pill--high {
+    background: rgba(239, 68, 68, 0.1);
+    color: #991b1b;
+}
+
+.cost-pill--none {
+    background: rgba(16, 185, 129, 0.15);
+    color: #064e3b;
+    font-weight: 700;
+}
+
+.cost-saving {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #065f46;
+}
+
+.cost-baseline {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Explanatory paragraph */
+.cost-table-explanation {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: var(--bg-light);
+    border-radius: 16px;
+    border-left: 4px solid var(--accent);
+}
+
+.cost-table-explanation p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.cost-table-explanation p:last-child {
+    margin-bottom: 0;
+}
+
+.cost-table-explanation strong {
+    color: var(--primary-dark);
+}
+
+/* References */
+.cost-table-references {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 51, 102, 0.07);
+}
+
+.references-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.cost-table-references ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.cost-table-references ul li {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.cost-table-references ul li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.cost-table-references em {
+    font-style: italic;
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .cost-table-wrapper {
+        padding: 1.5rem;
+    }
+    .cost-table-title {
+        font-size: 1.3rem;
+    }
+}
+
 /* Strategic and Scientific Leadership Section */
 .leadership-section {
+
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
     padding: 5rem 0;
 }
