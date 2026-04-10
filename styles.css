@@ -3462,6 +3462,201 @@ html.instant-scroll {
     object-fit: contain;
     transition: opacity 0.3s ease;
 }
+/* Transitioning state - subtle fade */
+body.section-transitioning {
+    opacity: 0.95;
+}
+
+/* Section reveal animation - elegant fade-in with slight upward movement */
+.section-reveal {
+    animation: sectionFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes sectionFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Override smooth scroll behavior for instant jumps */
+html.instant-scroll {
+    scroll-behavior: auto;
+}
+
+/* ========================================
+   COMPOSITION CLAIM ENHANCEMENT
+   ======================================== */
+
+/* Prominent claim styling */
+.composition-claim {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+}
+
+/* Supporting description text */
+.composition-description {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========================================
+   PRODUCT COMPOSITION ADJUSTMENTS
+   ======================================== */
+
+/* Product stage container - much larger */
+.product-stage {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 3rem;
+    min-height: 600px;
+    padding: 3rem 1rem;
+}
+
+/* Individual product items */
+.product {
+    flex: 1;
+    /* Changed to flex: 1 to ensure equal width distribution */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    /* Ensure contents are centered */
+}
+
+/* Product images - crisp rendering */
+.product img {
+    /* Removing crisp-edges as it causes aliasing on photos */
+    /* image-rendering: -webkit-optimize-contrast; */
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Stick product - larger */
+.product-stick {
+    /* Removed max-width to allow centering */
+    width: 100%;
+}
+
+.product-stick img {
+    max-height: 335px;
+    /* Reduced 10% more (total ~40% reduction from original) */
+    clip-path: inset(0 25px 0 0);
+    /* Right side crop for watermark */
+    margin: 0 auto;
+    display: block;
+}
+
+/* Tube product - balanced and prominent */
+.product-jar {
+    /* Removed max-width to allow centering */
+    width: 100%;
+}
+
+.product-jar img {
+    max-height: 580px;
+    object-fit: contain !important;
+    object-position: center bottom;
+    clip-path: inset(0 35px 0 0);
+    /* Increased crop to remove watermark */
+    margin: 0 auto;
+    /* Center image */
+    display: block;
+}
+
+/* Box product - sized for compatibility */
+.product-box {
+    /* Removed max-width to allow centering */
+    width: 100%;
+}
+
+.product-box img {
+    max-height: 240px;
+    /* Increased back to proportional size */
+    clip-path: inset(0 30px 0 0);
+    /* Increased crop to remove watermark */
+    margin: 0 auto;
+    /* Center image */
+    display: block;
+    object-fit: contain;
+}
+/* ==============================================
+   ACCIO FOOTER LOGO — isolated styles
+   ============================================== */
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.footer-bps-logo {
+    display: flex;
+    align-items: center;
+    overflow: visible;
+}
+
+.footer-bps-img {
+    height: 104px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    opacity: 1;
+    animation: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-bps-logo:hover .footer-bps-img {
+    opacity: 0.8;
+}
+
+.accio-support {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding-left: 3rem;
+    border-left: 1px solid rgba(0, 51, 102, 0.15);
+}
+
+.support-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+}
+
+.accio-logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.accio-logo {
+    height: 70px;
+    width: auto;
+    max-width: none;
+    display: block;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
 
 .accio-logo-link:hover .accio-logo {
     opacity: 0.8;
@@ -3476,5 +3671,302 @@ html.instant-scroll {
     .accio-support {
         padding-left: 0;
         border-left: none;
+    }
+}
+
+/* ========================================
+   BLOG SECTION (NO MODALS)
+   ======================================== */
+.blog-section {
+    background: var(--bg-light);
+    padding-top: 200px; /* Extra top padding to clear the fixed navbar (160px) */
+    padding-bottom: 100px;
+    min-height: 100vh;
+}
+
+.blog-section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3.5rem;
+}
+
+.blog-section-header .section-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.blog-section-header .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+#blog-grid-view {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    padding-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+    #blog-grid-view {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #blog-grid-view {
+        grid-template-columns: 1fr;
+    }
+}
+
+.blog-card {
+    background: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 51, 102, 0.05);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+    transform: translateZ(0); /* Force GPU layer to prevent border-radius artifacts */
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-soft);
+}
+
+.blog-card-img {
+    width: 100% !important;
+    height: 200px !important;
+    max-height: 200px !important;
+    object-fit: cover !important;
+    object-position: center center;
+    display: block;
+    /* No transitions or effects — prevents GPU antialiasing artifacts */
+}
+
+
+.blog-card-content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.blog-card-meta {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.blog-card-title {
+    font-size: 1.4rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.blog-card:hover .blog-card-title {
+    color: var(--primary);
+}
+
+.blog-card-excerpt {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.blog-card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-top: auto;
+    font-family: 'Inter', sans-serif;
+    transition: var(--transition-smooth);
+}
+
+.blog-card-btn i {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.blog-card-btn:hover {
+    color: var(--accent);
+}
+
+.blog-card-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* SINGLE POST VIEW */
+#blog-single-view {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.btn-back-blog {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.6rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+.btn-back-blog::before {
+    content: '←';
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    color: var(--accent);
+}
+
+.btn-back-blog:hover {
+    color: var(--primary);
+    border-bottom-color: var(--accent);
+    gap: 0.9rem;
+}
+
+.btn-back-blog:hover::before {
+    transform: translateX(-4px);
+}
+
+#single-post-content .post-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#single-post-content .post-title {
+    font-size: 3.5rem;
+    line-height: 1.15;
+    color: var(--primary-dark);
+    margin: 1rem 0 2rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+#single-post-content .post-meta {
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+#single-post-content .post-featured-image {
+    width: 100% !important;
+    height: 320px !important;
+    max-height: 320px !important;
+    object-fit: cover !important;
+    object-position: center center;
+    border-radius: 24px;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-md);
+    display: block;
+}
+
+#single-post-content .post-body {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-main);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#single-post-content .post-body p {
+    margin-bottom: 1.5rem;
+}
+
+#single-post-content .post-body h3 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+#single-post-content .post-body blockquote {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--primary);
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem 2rem;
+    background: var(--bg-light);
+    border-radius: 0 16px 16px 0;
+    margin: 2rem 0;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    #single-post-content .post-title {
+        font-size: 2rem;
+    }
+    #single-post-content .post-featured-image {
+        height: 250px;
+    }
+}
+
+/* ========================================
+   BLOG POST — INLINE FIGURE IMAGE
+   ======================================== */
+.post-inline-figure {
+    margin: 3rem 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+
+.post-inline-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    /* No transitions or effects — prevents GPU antialiasing artifacts */
+}
+
+
+.post-inline-figure figcaption {
+    background: var(--primary);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.85rem;
+    font-style: italic;
+    text-align: center;
+    padding: 0.85rem 1.5rem;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+    .post-inline-img {
+        height: 240px;
     }
 }
