@@ -3750,6 +3750,12 @@ html.instant-scroll {
     /* No transitions or effects — prevents GPU antialiasing artifacts */
 }
 
+.blog-card-img.blog-card-img--contain {
+    object-fit: contain !important;
+    background: linear-gradient(135deg, #eef4fb 0%, #dce8f5 100%);
+    padding: 0.25rem;
+}
+
 
 .blog-card-content {
     padding: 2.5rem;
@@ -3894,6 +3900,15 @@ html.instant-scroll {
     display: block;
 }
 
+#single-post-content .post-featured-image.post-featured-image--contain {
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 620px !important;
+    object-fit: contain !important;
+    margin: 0 auto 3rem !important;
+}
+
 #single-post-content .post-body {
     font-size: 1.15rem;
     line-height: 1.8;
@@ -3904,6 +3919,17 @@ html.instant-scroll {
 
 #single-post-content .post-body p {
     margin-bottom: 1.5rem;
+}
+
+#single-post-content .post-body ul {
+    margin: 1.5rem 0 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+#single-post-content .post-body li {
+    line-height: 1.7;
 }
 
 #single-post-content .post-body h3 {
@@ -3931,6 +3957,9 @@ html.instant-scroll {
     }
     #single-post-content .post-featured-image {
         height: 250px;
+    }
+    #single-post-content .post-featured-image.post-featured-image--contain {
+        max-height: 440px !important;
     }
 }
 

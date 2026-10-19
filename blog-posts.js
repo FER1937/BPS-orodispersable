@@ -1,5 +1,15 @@
 var blogPosts = [
     {
+        id: 5,
+        title: "Beyond the Lab: Why Palatability is the Missing Link in Pharmaceutical Development",
+        date: "October 20, 2026",
+        excerpt: "Featured on the cover of Global HealthCare Magazine, our Chief Scientific Officer, Dr. Jaume Saurí Duran, shares why bridging the gap between galenic excellence and industrial pragmatism is essential for real-world therapeutic adherence.",
+        imagen: "assets/images/global-healthcare-jaume-sauri.webp?v=20261020",
+        imagenPosicion: "center top",
+        imagenContain: true,
+        contenidoCompleto: '<p>Anyone who has spent time in the laboratory or in formulation strategy sessions with <strong>Dr. Jaume Saurí Duran</strong>, Chief Scientific Officer at BioPharma Synergies, knows one fundamental truth: he never settles for <em>"good enough."</em></p><p>In pharmaceutical development, teams spend years optimizing molecular efficacy, pharmacokinetic profiles, and long-term stability. Yet, as Dr. Saurí frequently reminds our team at BioPharma Synergies, even the most sophisticated formulation only succeeds in the real world if the patient actually takes it.</p><p>A fraction of a second of intense bitterness on the tongue can undo years of brilliant R&amp;D—particularly for pediatric patients, older adults experiencing dysphagia, or individuals managing complex chronic treatment regimens.</p><blockquote>&ldquo;A medication, regardless of its molecular sophistication, yields no clinical value if sensory rejection prevents the patient from completing the treatment.&rdquo;</blockquote><h3>From the Cover of Global HealthCare Magazine to Galenic Practice</h3><p>Dr. Saurí was recently featured on the cover of <strong><em>Global HealthCare Magazine</em> (October 2026)</strong> as one of <em>"The Most Influential Drug Delivery, Patient-Centric Pharmaceutical Leaders to Watch in 2026."</em> In his interview, he shared the scientific vision behind our patented <strong>BPS Taste-Masking Platform</strong>—a powerful testament to the leadership and rigor we have the privilege of working alongside every day.</p><p>For Dr. Saurí, palatability has never been a late-stage cosmetic adjustment or a simple flavoring exercise. His methodology addresses therapeutic adherence directly at the galenic and physicochemical level: neutralizing bitter, metallic, or aversive Active Pharmaceutical Ingredients (APIs) and transforming them into patient-friendly oral dosage forms—without ever compromising dissolution kinetics or bioavailability.</p><h3>Industrial Pragmatism: Science Built for the Factory Floor</h3><p>What makes Dr. Saurí’s approach truly distinctive in the industry is his <strong>industrial pragmatism</strong>. In early-stage R&amp;D, it is easy to become captivated by overly complex formulation architectures. However, transformative pharmaceutical science must be technically and economically viable on the manufacturing floor.</p><p>That philosophy is precisely what enabled our team to engineer a scalable, room-temperature taste-masking platform that delivers three decisive advantages:</p><ul><li><strong>Optimized Manufacturing Economics:</strong> Eliminates unnecessary CapEx and OpEx by avoiding energy-intensive thermal processes, solvent phases, or complex polymeric coatings.</li><li><strong>Seamless GMP Tech Transfer:</strong> Integrates directly into standard pharmaceutical blending and filling lines, accelerating scale-up from pilot batches to commercial production.</li><li><strong>Cross-Portfolio Versatility:</strong> Adapts effortlessly across prescription pharmaceuticals (Rx), OTC medications, and high-value nutraceutical formulations in Stick Packs, ODTs, and chewable formats.</li></ul><h3>The Future of Healthcare is Human</h3><p>The next generation of healthcare belongs to therapies that are not only clinically potent, but also humanly viable. Building this future every day is both our mission and our privilege at BioPharma Synergies—driven by Dr. Saurí’s scientific rigor, intellectual honesty in the laboratory, and relentless focus on the person at the end of the supply chain: the patient.</p><p><strong>Ready to Transform Your Formulation Pipeline?</strong><br>Want to learn more about how our patented <strong>BPS Taste-Masking Platform</strong> can elevate the sensory profile and commercial competitiveness of your pharmaceutical or nutraceutical products? <a href="#contact" onclick="irAContacto(event)" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Contact our expert team</a> to explore how we can collaborate.</p>'
+    },
+    {
         id: 4,
         title: "Revolutionizing Oral Drug Delivery: Biopharma Synergies Initiates Industrial Trials for a Paracetamol Stick-Pack Formulation",
         date: "October 15, 2026",
@@ -112,8 +122,9 @@ function renderizarBlog() {
     for (var i = 0; i < blogPosts.length; i++) {
         var post = blogPosts[i];
         var posicion = post.imagenPosicion || "center center";
+        var imgClass = post.imagenContain ? "blog-card-img blog-card-img--contain" : "blog-card-img";
         html += '<div class="blog-card">';
-        html += '  <img src="' + post.imagen + '" alt="' + post.title + '" class="blog-card-img" style="object-position: ' + posicion + ';" />';
+        html += '  <img src="' + post.imagen + '" alt="' + post.title + '" class="' + imgClass + '" style="object-position: ' + posicion + ';" />';
         html += '  <div class="blog-card-content">';
         html += '    <div class="blog-card-meta">' + post.date + '</div>';
         html += '    <h3 class="blog-card-title">' + post.title + '</h3>';
@@ -157,13 +168,14 @@ function abrirPost(id) {
     if (post.imagenCabecera && post.imagenCabeceraStyle) {
         styleStr += " " + post.imagenCabeceraStyle;
     }
+    var featuredClass = post.imagenContain ? "post-featured-image post-featured-image--contain" : "post-featured-image";
 
     var articleHTML = "";
     articleHTML += '<header class="post-header">';
     articleHTML += '  <span class="post-meta">' + post.date + '</span>';
     articleHTML += '  <h1 class="post-title">' + post.title + '</h1>';
     articleHTML += '</header>';
-    articleHTML += '<img src="' + headerImage + '" alt="' + post.title + '" class="post-featured-image" style="' + styleStr + '" />';
+    articleHTML += '<img src="' + headerImage + '" alt="' + post.title + '" class="' + featuredClass + '" style="' + styleStr + '" />';
     articleHTML += '<div class="post-body">';
     articleHTML += post.contenidoCompleto;
     articleHTML += '</div>';
@@ -172,3 +184,24 @@ function abrirPost(id) {
 
     window.scrollTo(0, 0);
 }
+
+function irAContacto(e) {
+    if (e) e.preventDefault();
+    var todasLasSecciones = document.querySelectorAll("section");
+    for (var k = 0; k < todasLasSecciones.length; k++) {
+        todasLasSecciones[k].style.display = "";
+    }
+    var hero = document.querySelector(".hero");
+    if (hero) hero.style.display = "";
+    var seccionBlog = document.getElementById("seccion-blog");
+    if (seccionBlog) seccionBlog.style.display = "none";
+
+    var contactSection = document.getElementById("contact");
+    if (contactSection) {
+        var headerOffset = 80;
+        var elementPosition = contactSection.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    }
+}
+
