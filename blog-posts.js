@@ -61,6 +61,9 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
     }
 
+    // Pre-render blog cards on initial load so Googlebot indexes them in the rendered DOM
+    renderizarBlog();
+
     // --- CLIC EN "Blog" del menu ---
     navBlogLink.addEventListener("click", function(e) {
         e.preventDefault();
