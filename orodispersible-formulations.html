@@ -29,7 +29,7 @@
       }
     }
     </script>
-    <link rel="stylesheet" href="styles.css?v=20261025b">
+    <link rel="stylesheet" href="styles.css?v=20261025c">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
     <header class="header">
         <nav class="nav container" aria-label="Main navigation">
             <a href="index.html" class="logo" aria-label="BPsynergies home">
-                <img src="assets/images/bps_new_logo.png" alt="BioPharma Synergies" class="logo-isotype">
+                <img alt="BioPharma Synergies" class="logo-isotype" src="assets/images/bps_new_logo.webp" srcset="assets/images/bps_new_logo-sm.webp 320w, assets/images/bps_new_logo.webp 620w" sizes="(max-width: 992px) 160px, 310px" width="620" height="320" loading="eager" decoding="async">
             </a>
             <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
                 <span></span><span></span><span></span>
@@ -86,7 +86,7 @@
                     </ul>
                 </li>
                 <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="index.html#lead-form" class="btn btn-outline">Request Dossier</a></li>
+                <li><a href="#lead-form" class="btn btn-outline">Request Dossier</a></li>
             </ul>
         </nav>
     </header>
@@ -105,7 +105,7 @@
                     <span class="badge">TECHNICAL DOSSIER · GALENIC &amp; INDUSTRIAL PROCESS</span>
                     <h1 style="font-size: 3.1rem; line-height: 1.12; color: var(--primary-dark); margin-bottom: 1.5rem;"><span class="text-gradient">Orodispersible Formulation</span> Development &amp; Industrial Scale-Up</h1>
                     <p class="hero-subtitle" style="margin-bottom: 2rem;">Room-temperature Direct Mixing for Stick Pack powders, Orodispersible Tablets (ODTs), and chewable tablets—eliminating freeze-drying, spray-drying, wet granulation, and fluid-bed coating while preserving thermosensitive APIs.</p>
-                    <a href="index.html#lead-form" class="btn btn-primary">Request Galenic &amp; Rheological Data</a>
+                    <a href="#lead-form" class="btn btn-primary">Request Galenic &amp; Rheological Data</a>
                 </div>
                 <div class="hero-visual">
                     <div class="dossier-kpi-grid">
@@ -207,7 +207,7 @@
         <section class="section" style="background: var(--bg-light); padding: 90px 0;">
             <div class="container grid-2" style="align-items: center;">
                 <div style="border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-lg);">
-                    <img src="assets/images/clean_pharma_facility.png" alt="Standard GMP Direct Mixing and Compression Facility" style="width: 100%; height: auto; display: block;">
+                    <img alt="Standard GMP Direct Mixing and Compression Facility" style="width: 100%; height: auto; display: block;" src="assets/images/clean_pharma_facility.webp" srcset="assets/images/clean_pharma_facility-sm.webp 480w, assets/images/clean_pharma_facility.webp 640w" sizes="(max-width: 992px) 92vw, 46vw" width="640" height="640" loading="lazy" decoding="async">
                 </div>
                 <div>
                     <span class="badge">DELIVERY SYSTEMS &amp; PATENTED FORMATS</span>
@@ -252,15 +252,64 @@
             </div>
         </section>
 
-        <footer class="footer-cta section">
+        <footer id="lead-form" class="footer-cta section">
             <div class="container">
                 <div class="cta-card">
                     <div class="cta-header">
-                        <h2>Initiate Your <span class="text-gradient">Formulation Transfer</span></h2>
-                        <p>Request our industrial scale-up protocols and Paracetamol Stick-Pack industrial trial information.</p>
-                        <div style="margin-top: 2rem;">
-                            <a href="index.html#lead-form" class="btn btn-primary">Request Formulation Dossier</a>
+                        <h2>Evaluate Your <span class="text-gradient">Orodispersible Formulation</span></h2>
+                        <p>Check direct-mixing galenic feasibility for Stick Packs, ODTs, or chewable tablets.</p>
+                    </div>
+                    <form class="cta-form" novalidate>
+                        <div>
+                            <span class="inquiry-reason-label">How can we help your laboratory?</span>
+                            <div class="inquiry-reason-grid">
+                                <label class="inquiry-reason-card">
+                                    <input type="radio" name="inquiry_type" value="Evaluate a formulation (API feasibility)" checked>
+                                    <span>
+                                        <span class="inquiry-reason-title">Evaluate a formulation</span>
+                                        <span class="inquiry-reason-desc">Test taste-masking &amp; galenic feasibility for a bitter API before licensing</span>
+                                    </span>
+                                </label>
+                                <label class="inquiry-reason-card">
+                                    <input type="radio" name="inquiry_type" value="Technology licensing inquiry">
+                                    <span>
+                                        <span class="inquiry-reason-title">Consult a technology license</span>
+                                        <span class="inquiry-reason-desc">Out-licensing terms, territorial exclusivity &amp; Value-Added Medicines (PLM)</span>
+                                    </span>
+                                </label>
+                            </div>
                         </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" name="name" placeholder="Dr. Jane Smith" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Company / Laboratory</label>
+                                <input type="text" name="company" placeholder="Pharmaceutical Laboratory" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Position</label>
+                                <input type="text" name="position" placeholder="R&amp;D Director / Galenic Lead / BD" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Corporate Email</label>
+                                <input type="email" name="email" placeholder="name@company.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group form-group--full">
+                            <label>What would you like to develop or improve?</label>
+                            <textarea name="project_details" rows="3" placeholder="Briefly describe the API/molecule, target dosage format (Stick Pack, ODT, Chewable), or palatability challenge..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Request Formulation Evaluation</button>
+                    </form>
+                    <div class="form-confirmation" role="status" aria-live="polite">
+                        <span class="form-confirmation-badge">Request Received</span>
+                        <h3>Thank you for contacting BPsynergies</h3>
+                        <p class="form-confirmation-summary">We have registered your inquiry. Our scientific and business development team in Barcelona will reply within 1–2 business days.</p>
+                        <button type="button" class="btn btn-outline form-reset-btn">Send another inquiry</button>
                     </div>
                 </div>
                 <div class="seo-footer-links">
@@ -291,6 +340,6 @@
         </footer>
     </main>
     <script>lucide.createIcons();</script>
-    <script src="nav.js?v=20261025"></script>
+    <script src="nav.js?v=20261025c"></script>
 </body>
 </html>
