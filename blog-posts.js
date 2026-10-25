@@ -93,6 +93,11 @@ document.addEventListener("DOMContentLoaded", function() {
         window.scrollTo(0, 0);
     });
 
+    // Open the blog view directly when arriving from another page via index.html#seccion-blog
+    if (window.location.hash === "#seccion-blog") {
+        navBlogLink.click();
+    }
+
     // --- CLIC en otros enlaces del menu: volver a la landing normal ---
     var otherLinks = document.querySelectorAll('.nav-links a:not([href="#seccion-blog"]), .logo');
     for (var j = 0; j < otherLinks.length; j++) {

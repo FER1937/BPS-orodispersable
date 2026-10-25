@@ -29,7 +29,7 @@
       }
     }
     </script>
-    <link rel="stylesheet" href="styles.css?v=20261025">
+    <link rel="stylesheet" href="styles.css?v=20261025b">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -38,16 +38,54 @@
 
 <body>
     <header class="header">
-        <nav class="nav container">
-            <a href="index.html" class="logo">
+        <nav class="nav container" aria-label="Main navigation">
+            <a href="index.html" class="logo" aria-label="BPsynergies home">
                 <img src="assets/images/bps_new_logo.png" alt="BioPharma Synergies" class="logo-isotype">
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html">&larr; Main Page</a></li>
-                <li><a href="taste-masking-technology.html">Taste-Masking Tech</a></li>
-                <li><a href="orodispersible-formulations.html">Formulations</a></li>
-                <li><a href="patient-centric-formulations.html" style="color: var(--primary); opacity: 1; font-weight: 700;">Patient-Centric</a></li>
-                <li><a href="taste-masking-licensing.html">Licensing</a></li>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="site-menu">
+                <li class="nav-dropdown is-active">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Solutions</button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="taste-masking-technology.html">Taste-Masking for Bitter APIs</a></li>
+                        <li><a href="orodispersible-formulations.html">Orodispersible Formulations</a></li>
+                        <li><a href="patient-centric-formulations.html" class="active" aria-current="page">Patient-Centric Development</a></li>
+                        <li><a href="taste-masking-licensing.html">Licensing &amp; Value-Added Medicines</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Science</button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="index.html#technology">Technology</a></li>
+                        <li><a href="index.html#api-success">Success Rate (50+ APIs)</a></li>
+                        <li><a href="index.html#validation">Dual-Validation Methodology</a></li>
+                        <li><a href="index.html#clinical">Clinical Value</a></li>
+                        <li><a href="index.html#efficiency">Cost Efficiency</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#patents">Patents</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Insights</button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="index.html#seccion-blog">All articles</a></li>
+                        <li><a href="blog/beyond-the-lab-palatability.html">Beyond the Lab: Why Palatability Matters</a></li>
+                        <li><a href="blog/paracetamol-stick-pack-industrial-trials.html">Paracetamol Stick-Pack Industrial Trials</a></li>
+                        <li><a href="blog/future-of-taste-masking-pediatrics.html">The Future of Taste Masking in Pediatrics</a></li>
+                        <li><a href="blog/us-patent-taste-masking-platform.html">U.S. Patent No. 12,582,601</a></li>
+                        <li><a href="blog/develop-profitable-new-drugs-taste-masking.html">Profitable Value-Added Medicines</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Why BPS</button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="index.html#advantage">The Waterless Advantage</a></li>
+                        <li><a href="index.html#business">Value for Licensees</a></li>
+                        <li><a href="index.html#leadership">Leadership</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#contact">Contact</a></li>
                 <li><a href="index.html#lead-form" class="btn btn-outline">Request Dossier</a></li>
             </ul>
         </nav>
@@ -57,6 +95,13 @@
         <section class="hero" style="padding: 210px 0 90px;">
             <div class="container hero-grid">
                 <div class="hero-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                        <ol>
+                            <li><a href="index.html">Home</a></li>
+                            <li>Solutions</li>
+                            <li aria-current="page">Patient-Centric Development</li>
+                        </ol>
+                    </nav>
                     <span class="badge">TECHNICAL DOSSIER · ADHERENCE &amp; CLINICAL ACCEPTABILITY</span>
                     <h1 style="font-size: 3.1rem; line-height: 1.12; color: var(--primary-dark); margin-bottom: 1.5rem;"><span class="text-gradient">Patient-Centric Formulation</span> Development &amp; Therapeutic Adherence</h1>
                     <p class="hero-subtitle" style="margin-bottom: 2rem;">A medication, regardless of its molecular sophistication, yields no clinical efficacy if sensory rejection or swallowing difficulties prevent the patient from taking it. BPS designs bespoke waterless oral formulations under Quality by Design principles for pediatric, geriatric, and dysphagia populations.</p>
@@ -65,8 +110,8 @@
                 <div class="hero-visual">
                     <div class="dossier-kpi-grid">
                         <div class="dossier-kpi-card">
-                            <span class="dossier-kpi-num">91.1%</span>
-                            <span class="dossier-kpi-label">Parental Preference for ODTs Over Conventional Tablets in European Studies</span>
+                            <span class="dossier-kpi-num">3</span>
+                            <span class="dossier-kpi-label">Waterless Formats: Stick Pack, ODT &amp; Chewable Tablet</span>
                         </div>
                         <div class="dossier-kpi-card">
                             <span class="dossier-kpi-num">&lt;200 &micro;m</span>
@@ -107,33 +152,62 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="cost-table-row--highlight">
+                                <tr>
                                     <td><span class="technique-name">Unimpeded Dissolution Kinetics</span></td>
-                                    <td>Non-occlusive oral micro-pH modulation avoids polymeric barrier coatings, making the API immediately available for dissolution (&lt;15–30 s) without delaying release</td>
-                                    <td>Orodispersible Stick Pack Powders &amp; ODTs</td>
-                                    <td>Acute rescue treatments (e.g., migraine triptans, analgesics) &amp; bioequivalence-sensitive generics</td>
+                                    <td>Non-occlusive ternary system masks bitterness via oral micro-pH modulation, preserving intrinsic API dissolution profiles. With no polymeric barriers, the drug is immediately available for absorption.</td>
+                                    <td>ODTs &amp; Stick Packs</td>
+                                    <td>Rescue treatments such as migraine</td>
                                 </tr>
                                 <tr>
-                                    <td><span class="technique-name">Organoleptic Acceptability &amp; Adherence</span></td>
-                                    <td>Direct sensory interference elevates the bitter taste detection threshold and eliminates metallic aftertaste and trigeminal irritation</td>
+                                    <td><span class="technique-name">Organoleptic &amp; Waterless Adherence</span></td>
+                                    <td>Neutralizing bitter API taste and eliminating the need for water reduces treatment refusal and "pill burden".</td>
                                     <td>Stick Packs, ODTs &amp; Chewable Tablets</td>
-                                    <td>Pediatric patients (heightened bitter sensitivity) &amp; chronic multi-medication regimens</td>
+                                    <td>Pediatric, geriatric and chronic patient populations</td>
                                 </tr>
                                 <tr>
                                     <td><span class="technique-name">Dysphagia &amp; Swallowing Safety</span></td>
-                                    <td>Instantaneous disintegration upon contact with saliva eliminates the need to swallow monolithic solid tablets or water</td>
-                                    <td>Stick Pack Powders &amp; ODTs</td>
-                                    <td>Geriatric patients, non-cooperative infants/children &amp; individuals with dysphagia</td>
+                                    <td>Orodispersible powders and fast-disintegrating ODTs disperse rapidly in saliva (&lt;15–30 s), mitigating choking risks compared to monolithic tablets.</td>
+                                    <td>Orodispersible Powders (Stick Packs) &amp; ODTs</td>
+                                    <td>Patients with dysphagia; geriatric and pediatric patients who struggle with swallowing</td>
                                 </tr>
                                 <tr>
                                     <td><span class="technique-name">Unit-Dose Precision</span></td>
-                                    <td>Pre-measured solid single-unit formats eliminate the dosing errors, spillage, and stability limitations of liquid syrups and suspensions</td>
+                                    <td>Single-unit formats eliminate the measuring variability of liquid syrups and suspensions, ensuring reproducible dosing.</td>
                                     <td>Stick Packs, ODTs &amp; Chewable Tablets</td>
-                                    <td>Pediatric caregivers, geriatric self-administration &amp; on-the-go active lifestyles</td>
+                                    <td>Pediatric and geriatric regimens</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="next-steps" style="background: var(--bg-light);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge">NEXT STEP</span>
+                    <h2 class="section-title">Continue Your <span class="text-gradient">Evaluation</span></h2>
+                </div>
+                <div class="next-steps-grid">
+                    <a href="taste-masking-licensing.html" class="next-step-card next-step-card--primary">
+                        <span class="next-step-kicker">Recommended next</span>
+                        <h3>Licensing &amp; Value-Added Medicines</h3>
+                        <p>European and US patent protection, territories and licensing value.</p>
+                        <span class="next-step-arrow">View dossier &rarr;</span>
+                    </a>
+                    <a href="taste-masking-technology.html" class="next-step-card">
+                        <span class="next-step-kicker">Science</span>
+                        <h3>Taste-Masking for Bitter APIs</h3>
+                        <p>Mechanism, 85% success rate across 50+ APIs and the Dual-Validation Protocol.</p>
+                        <span class="next-step-arrow">View dossier &rarr;</span>
+                    </a>
+                    <a href="orodispersible-formulations.html" class="next-step-card">
+                        <span class="next-step-kicker">Manufacturing</span>
+                        <h3>Orodispersible Formulations</h3>
+                        <p>Delivery formats, rheological parameters and the comparative production cost analysis.</p>
+                        <span class="next-step-arrow">View dossier &rarr;</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -177,5 +251,6 @@
         </footer>
     </main>
     <script>lucide.createIcons();</script>
+    <script src="nav.js?v=20261025"></script>
 </body>
 </html>

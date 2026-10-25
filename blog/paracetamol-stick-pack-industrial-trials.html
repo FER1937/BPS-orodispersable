@@ -26,23 +26,61 @@
       "publisher": { "@type": "Organization", "name": "BioPharma Synergies S.L.", "url": "https://bpsynergies.eu/" }
     }
     </script>
-    <link rel="stylesheet" href="../styles.css?v=20261025">
+    <link rel="stylesheet" href="../styles.css?v=20261025b">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
     <header class="header">
-        <nav class="nav container">
-            <a href="../index.html" class="logo">
+        <nav class="nav container" aria-label="Main navigation">
+            <a href="../index.html" class="logo" aria-label="BPsynergies home">
                 <img src="../assets/images/bps_new_logo.png" alt="BioPharma Synergies" class="logo-isotype">
             </a>
-            <ul class="nav-links">
-                <li><a href="../index.html">&larr; Main Page</a></li>
-                <li><a href="../taste-masking-technology.html">Taste-Masking Tech</a></li>
-                <li><a href="../orodispersible-formulations.html">Formulations</a></li>
-                <li><a href="../patient-centric-formulations.html">Patient-Centric</a></li>
-                <li><a href="../taste-masking-licensing.html">Licensing</a></li>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="site-menu">
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Solutions</button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="../taste-masking-technology.html">Taste-Masking for Bitter APIs</a></li>
+                        <li><a href="../orodispersible-formulations.html">Orodispersible Formulations</a></li>
+                        <li><a href="../patient-centric-formulations.html">Patient-Centric Development</a></li>
+                        <li><a href="../taste-masking-licensing.html">Licensing &amp; Value-Added Medicines</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Science</button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="../index.html#technology">Technology</a></li>
+                        <li><a href="../index.html#api-success">Success Rate (50+ APIs)</a></li>
+                        <li><a href="../index.html#validation">Dual-Validation Methodology</a></li>
+                        <li><a href="../index.html#clinical">Clinical Value</a></li>
+                        <li><a href="../index.html#efficiency">Cost Efficiency</a></li>
+                    </ul>
+                </li>
+                <li><a href="../index.html#patents">Patents</a></li>
+                <li class="nav-dropdown is-active">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Insights</button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="../index.html#seccion-blog">All articles</a></li>
+                        <li><a href="beyond-the-lab-palatability.html">Beyond the Lab: Why Palatability Matters</a></li>
+                        <li><a href="paracetamol-stick-pack-industrial-trials.html" class="active" aria-current="page">Paracetamol Stick-Pack Industrial Trials</a></li>
+                        <li><a href="future-of-taste-masking-pediatrics.html">The Future of Taste Masking in Pediatrics</a></li>
+                        <li><a href="us-patent-taste-masking-platform.html">U.S. Patent No. 12,582,601</a></li>
+                        <li><a href="develop-profitable-new-drugs-taste-masking.html">Profitable Value-Added Medicines</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Why BPS</button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="../index.html#advantage">The Waterless Advantage</a></li>
+                        <li><a href="../index.html#business">Value for Licensees</a></li>
+                        <li><a href="../index.html#leadership">Leadership</a></li>
+                    </ul>
+                </li>
+                <li><a href="../index.html#contact">Contact</a></li>
                 <li><a href="../index.html#lead-form" class="btn btn-outline">Request Dossier</a></li>
             </ul>
         </nav>
@@ -95,5 +133,6 @@
         </section>
     </main>
     <script>lucide.createIcons();</script>
+    <script src="../nav.js?v=20261025"></script>
 </body>
 </html>

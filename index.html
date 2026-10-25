@@ -41,7 +41,7 @@
       }
     }
     </script>
-    <link rel="stylesheet" href="styles.css?v=20261025">
+    <link rel="stylesheet" href="styles.css?v=20261025b">
     <!-- Google Fonts: Outfit for headings, Inter for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,21 +56,53 @@
 
 <body>
     <header class="header">
-        <nav class="nav container">
-            <a href="#top" class="logo">
+        <nav class="nav container" aria-label="Main navigation">
+            <a href="#top" class="logo" aria-label="BPsynergies home">
                 <img src="assets/images/bps_new_logo.png" alt="BioPharma Synergies" class="logo-isotype">
             </a>
-            <ul class="nav-links">
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="site-menu">
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Solutions</button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="taste-masking-technology.html">Taste-Masking for Bitter APIs</a></li>
+                        <li><a href="orodispersible-formulations.html">Orodispersible Formulations</a></li>
+                        <li><a href="patient-centric-formulations.html">Patient-Centric Development</a></li>
+                        <li><a href="taste-masking-licensing.html">Licensing &amp; Value-Added Medicines</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Science</button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="#technology">Technology</a></li>
+                        <li><a href="#api-success">Success Rate (50+ APIs)</a></li>
+                        <li><a href="#validation">Dual-Validation Methodology</a></li>
+                        <li><a href="#clinical">Clinical Value</a></li>
+                        <li><a href="#efficiency">Cost Efficiency</a></li>
+                    </ul>
+                </li>
                 <li><a href="#patents">Patents</a></li>
-                <li><a href="#clinical">Clinical Value</a></li>
-                <li><a href="#advantage">Advantage</a></li>
-                <li><a href="#business">Business</a></li>
-                <li><a href="#efficiency">Efficiency</a></li>
-                <li><a href="#leadership">Leadership</a></li>
-                <li><a href="#technology">Technology</a></li>
-                <li><a href="#api-success">Success Rate</a></li>
-                <li><a href="#validation">Methodology</a></li>
-                <li><a href="#seccion-blog" id="nav-blog">Blog</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Insights</button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="#seccion-blog" id="nav-blog">All articles</a></li>
+                        <li><a href="blog/beyond-the-lab-palatability.html">Beyond the Lab: Why Palatability Matters</a></li>
+                        <li><a href="blog/paracetamol-stick-pack-industrial-trials.html">Paracetamol Stick-Pack Industrial Trials</a></li>
+                        <li><a href="blog/future-of-taste-masking-pediatrics.html">The Future of Taste Masking in Pediatrics</a></li>
+                        <li><a href="blog/us-patent-taste-masking-platform.html">U.S. Patent No. 12,582,601</a></li>
+                        <li><a href="blog/develop-profitable-new-drugs-taste-masking.html">Profitable Value-Added Medicines</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Why BPS</button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="#advantage">The Waterless Advantage</a></li>
+                        <li><a href="#business">Value for Licensees</a></li>
+                        <li><a href="#leadership">Leadership</a></li>
+                    </ul>
+                </li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#lead-form" class="btn btn-outline">Request Dossier</a></li>
             </ul>
@@ -118,7 +150,7 @@
                     <p class="section-subtitle">Medication that adapts to the patient's life, not the other way around.
                         Pioneering convenience through clinical excellence.</p>
                     <div style="margin-top: 1.5rem;">
-                        <a href="patient-centric-formulations.html" class="btn btn-outline" style="font-size: 0.9rem; padding: 0.65rem 1.6rem;">Explore Patient-Centric Formulation Dossier &rarr;</a>
+                        <a href="patient-centric-formulations.html" class="btn btn-outline" style="font-size: 0.9rem; padding: 0.65rem 1.6rem;">Solutions: Patient-Centric Development &rarr;</a>
                     </div>
                 </div>
 
@@ -531,7 +563,7 @@
                     <p class="section-description">Three pillars of pharmaceutical innovation that redefine patient
                         experience and manufacturing excellence.</p>
                     <div style="margin-top: 1.5rem;">
-                        <a href="taste-masking-technology.html" class="btn btn-outline" style="font-size: 0.9rem; padding: 0.65rem 1.6rem;">Explore Taste-Masking Solutions for Bitter APIs &rarr;</a>
+                        <a href="taste-masking-technology.html" class="btn btn-outline" style="font-size: 0.9rem; padding: 0.65rem 1.6rem;">Solutions: Taste-Masking for Bitter APIs &rarr;</a>
                     </div>
                 </div>
 
@@ -851,7 +883,7 @@
                     <p class="section-subtitle">Versatile formats engineered for manufacturing scalability and patient
                         delight.</p>
                     <div style="margin-top: 1.5rem;">
-                        <a href="orodispersible-formulations.html" class="btn btn-outline" style="font-size: 0.9rem; padding: 0.65rem 1.6rem;">Explore Orodispersible Formulation Development &rarr;</a>
+                        <a href="orodispersible-formulations.html" class="btn btn-outline" style="font-size: 0.9rem; padding: 0.65rem 1.6rem;">Solutions: Orodispersible Formulations &rarr;</a>
                     </div>
                 </div>
 
@@ -947,7 +979,7 @@
                     <p class="section-subtitle">Exclusive rights for formulation, production, and commercialization
                         across major markets.</p>
                     <div style="margin-top: 1.5rem;">
-                        <a href="taste-masking-licensing.html" class="btn btn-outline" style="font-size: 0.9rem; padding: 0.65rem 1.6rem;">Explore Licensing &amp; Value-Added Medicines Dossier &rarr;</a>
+                        <a href="taste-masking-licensing.html" class="btn btn-outline" style="font-size: 0.9rem; padding: 0.65rem 1.6rem;">Solutions: Licensing &amp; Value-Added Medicines &rarr;</a>
                     </div>
                 </div>
 
@@ -1327,12 +1359,13 @@
         </div>
         </div>
 
-    <script src="blog-posts.js?v=20261020"></script>
+    <script src="blog-posts.js?v=20261025"></script>
     <script src="main.js?v=20260206_1144"></script>
     <script>
         //lize Lucide Icons
         lucide.createIcons();
     </script>
+    <script src="nav.js?v=20261025"></script>
 </body>
 
 </html>
