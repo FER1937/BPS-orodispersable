@@ -3999,3 +3999,69 @@ html.instant-scroll {
         height: 240px;
     }
 }
+
+/* ========================================
+   SEO ARCHITECTURE & FOOTER LINKS
+   ======================================== */
+.seo-footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    padding: 3rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(0, 51, 102, 0.1);
+    text-align: left;
+}
+
+.seo-footer-col h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.seo-footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.seo-footer-col a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: color 0.25s ease;
+}
+
+.seo-footer-col a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .seo-footer-links {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.hero-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+}
+
+.hero-seo-h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    max-width: 600px;
+}
+
+
