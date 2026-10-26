@@ -1317,7 +1317,7 @@ h4 {
     object-fit: cover;
     /* Fill the frame */
     /* Center horizontally, Top vertically (crucial for cropping bottom) */
-    object-position: center top;
+    object-position: center 18%;
 
     image-rendering: -webkit-optimize-contrast;
     filter: contrast(1.05) brightness(1.02);
