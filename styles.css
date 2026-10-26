@@ -1264,7 +1264,9 @@ h4 {
     position: relative;
     width: 100%;
     height: 450px;
-    /* Unified height for perfect balance */
+    aspect-ratio: 3 / 2;
+    height: auto !important;
+    /* Unified 3:2 horizontal aspect ratio for both portraits */
     overflow: hidden;
     background: #f0f4f8;
     /* Default background */
@@ -1274,7 +1276,8 @@ h4 {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    object-position: bottom center;
+    object-fit: cover;
+    object-position: center center;
     transition: transform 0.5s ease;
 }
 
@@ -1301,7 +1304,9 @@ h4 {
 }
 
 .leader-agell .leader-photo img {
-    margin-top: 20px;
+    margin-top: 0;
+    object-fit: cover;
+    object-position: center center;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
     /* Add depth to subject vs background */
 }
@@ -1317,7 +1322,7 @@ h4 {
     object-fit: cover;
     /* Fill the frame */
     /* Center horizontally, Top vertically (crucial for cropping bottom) */
-    object-position: center 18%;
+    object-position: center center;
 
     image-rendering: -webkit-optimize-contrast;
     filter: contrast(1.05) brightness(1.02);
